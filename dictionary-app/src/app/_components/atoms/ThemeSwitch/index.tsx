@@ -1,6 +1,6 @@
 import "@/app/_styles/components/atoms/_theme-switch.scss";
 
-export const ThemeSwitch = () => {
+export const ThemeSwitch = (): JSX.Element => {
   return (
     <div className="__theme_switch">
       <div className="__theme_switch_toggle">
