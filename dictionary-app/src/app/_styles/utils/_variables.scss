@@ -1,0 +1,31 @@
+@use "./fonts" as *;
+
+$primary-color: #fff;
+$secondary-color: #050505;
+$primary-text-color: #2d2d2d;
+$accent-color: #a445ed;
+$error-color: #ff5252;
+
+$inconsolata-regular: "Incosolata Regular";
+$inconsolata-bold: "Incosolata Bold";
+$inter-regular: "Inter Regular";
+$inter-bold: "Inter Bold";
+$lora-regular: "Lora Regular";
+$lora-bold: "Lora Bold";
+$lora-bold-italic: "Lora Bold Italic";
+
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1440px;
+
+$breakpoints: (
+  "sm": (
+    max-width: $mobile,
+  ),
+  "md": (
+    max-width: $tablet,
+  ),
+  "lg": (
+    max-width: $desktop,
+  ),
+);
