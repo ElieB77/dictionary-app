@@ -1,0 +1,85 @@
+@use "../../utils/variables" as *;
+
+.__theme_switch {
+  &_toggle {
+    position: relative;
+    width: 40px;
+    display: inline-block;
+    text-align: left;
+    top: 8px;
+
+    &_checkbox {
+      display: none;
+
+      &:checked
+        + .__theme_switch_toggle_label
+        .__theme_switch_toggle_label_inner {
+        margin-left: 0;
+      }
+
+      &:checked
+        + .__theme_switch_toggle_label
+        .__theme_switch_toggle_label_switch {
+        right: 0px;
+      }
+    }
+
+    &_label {
+      display: block;
+      overflow: hidden;
+      cursor: pointer;
+      border: 0 solid $input-color;
+      border-radius: 20px;
+
+      &_inner {
+        display: block;
+        width: 200%;
+        margin-left: -100%;
+        transition: margin 0.3s linear 0.3s;
+
+        &::before,
+        &::after {
+          float: left;
+          width: 50%;
+          height: 20px;
+          padding: 0;
+          line-height: 36px;
+          color: $primary-color;
+          font-weight: bold;
+          box-sizing: border-box;
+        }
+
+        &::before {
+          content: "";
+          padding-left: 10px;
+          background-color: $accent-color;
+          color: $primary-color;
+        }
+
+        &::after {
+          content: "";
+          padding-right: 10px;
+          background-color: $input-color;
+          color: $primary-color;
+          text-align: right;
+        }
+      }
+
+      &_switch {
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin: 2.5px;
+        background: $primary-color;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 20px;
+        border: 0 solid $input-color;
+        border-radius: 20px;
+        border-radius: 50%;
+        transition: all 0.3s ease-in 0s;
+      }
+    }
+  }
+}
