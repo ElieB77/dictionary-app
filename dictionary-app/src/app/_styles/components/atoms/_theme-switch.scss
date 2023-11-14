@@ -6,7 +6,7 @@
     width: 40px;
     display: inline-block;
     text-align: left;
-    top: 8px;
+    top: 0;
 
     &_checkbox {
       display: none;
@@ -30,6 +30,11 @@
       cursor: pointer;
       border: 0 solid $input-color;
       border-radius: 20px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
 
       &_inner {
         display: block;
