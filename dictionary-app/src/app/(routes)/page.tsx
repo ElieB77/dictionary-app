@@ -1,13 +1,9 @@
-import { SearchBar } from "../_components/atoms/SearchBar";
-import { Header } from "../_components/organisms/Header";
+import { Layout } from "../_components/templates/Layout";
 
 export default function Home() {
   return (
     <main>
-      <div>
-        <Header />
-        <SearchBar />
-      </div>
+      <Layout />
     </main>
   );
 }

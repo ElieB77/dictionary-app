@@ -1,0 +1,6 @@
+@use "../utils/variables" as *;
+
+.__layout {
+  width: $mobile;
+  margin-inline: auto;
+}

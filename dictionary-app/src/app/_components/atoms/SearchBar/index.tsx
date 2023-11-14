@@ -8,8 +8,8 @@ export const SearchBar = () => {
       <Image
         src={"/images/icon-search.svg"}
         alt={"Search Icon"}
-        width={15}
-        height={15}
+        width={15.55}
+        height={15.55}
       />
     </div>
   );
