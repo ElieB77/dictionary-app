@@ -1,3 +1,4 @@
+import { SearchBar } from "../_components/atoms/SearchBar";
 import { Header } from "../_components/organisms/Header";
 
 export default function Home() {
@@ -5,6 +6,7 @@ export default function Home() {
     <main>
       <div>
         <Header />
+        <SearchBar />
       </div>
     </main>
   );

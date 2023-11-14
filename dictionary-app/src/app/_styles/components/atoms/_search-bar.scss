@@ -1,0 +1,17 @@
+@use "../../utils/variables" as *;
+
+.__search_bar {
+  width: 327px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $searchbar-color;
+  border-radius: 16px;
+  padding: 16px 24px;
+
+  & input {
+    border: none;
+    width: 100%;
+    outline: none;
+    background-color: $searchbar-color;
+  }
+}

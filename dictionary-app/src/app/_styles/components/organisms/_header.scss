@@ -1,13 +1,21 @@
+@use "../../utils/variables" as *;
+
 .__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 326px;
+  width: 100%;
 
   &_theme {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+
+    &_divider {
+      height: 32px;
+      width: 1px;
+      background-color: $divider-color;
+    }
   }
 }

@@ -2,6 +2,7 @@ import { HeaderLogo } from "../../atoms/HeaderLogo";
 import { ThemeLogo } from "../../atoms/ThemeLogo";
 import { ThemeSwitch } from "../../atoms/ThemeSwitch";
 import "@/app/_styles/components/organisms/_header.scss";
+import { SelectFont } from "../../molecules/SelectFont";
 
 export const Header = (): JSX.Element => {
   return (
@@ -13,7 +14,10 @@ export const Header = (): JSX.Element => {
         width={32}
         height={36}
       />
+
       <div className="__header_theme">
+        <SelectFont />
+        <div className="__header_theme_divider"></div>
         <ThemeSwitch />
         <ThemeLogo
           src={"/images/icon-moon.svg"}
