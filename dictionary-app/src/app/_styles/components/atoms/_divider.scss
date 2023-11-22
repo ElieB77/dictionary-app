@@ -1,0 +1,17 @@
+@use "../../utils/variables" as *;
+
+.__divider {
+  display: flex;
+  align-items: center;
+  & p {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  & hr {
+    flex-grow: 2;
+    width: 100%;
+    height: 1px;
+    background-color: $divider-color;
+    border: none;
+  }
+}
