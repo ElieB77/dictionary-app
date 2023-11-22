@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/_styles/main.scss";
+import { SearchProvider } from "../_contexts/SearchContext";
 
 export const metadata: Metadata = {
   title: "Dictionary",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SearchProvider>{children}</SearchProvider>
+      </body>
     </html>
   );
 }
