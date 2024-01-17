@@ -14,8 +14,7 @@ export const ListItems = (props: ListItemsProps) => {
       <ul>
         {props.def &&
           props.def.map((el: ApiWordDefintions) => {
-            const uniqueKey = uuid();
-            console.log(uniqueKey);
+            const uniqueKey: string = uuid();
             return <li key={uniqueKey}>{el.definition}</li>;
           })}
       </ul>
