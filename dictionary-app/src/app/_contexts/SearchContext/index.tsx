@@ -18,7 +18,7 @@ export const useSearch = () => {
 };
 
 export const SearchProvider = ({ children }: SearchProviderProps) => {
-  const [result, setResult] = useState<any>("keyboard");
+  const [result, setResult] = useState<any>("");
 
   const handleSearchData = async (word: string) => {
     const data = await api.fetchWords(word);
