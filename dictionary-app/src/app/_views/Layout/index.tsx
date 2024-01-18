@@ -13,7 +13,8 @@ import { Synonyms } from "@/app/_components/atoms/Synonyms";
 export const Layout = (): JSX.Element => {
   const { result } = useSearch();
 
-  console.log("****", result[0].meanings[0].synonyms);
+  // console.log("****", result[0].meanings[0].synonyms);
+  console.log(result);
 
   return (
     <div className="__layout">
