@@ -1,10 +1,10 @@
 import "@/app/_styles/components/molecules/_list-item.scss";
-import { ApiWordDefintions } from "@/app/_types/api/ApiWordDefinitions";
+import { ApiWordDefinitions } from "@/app/_types/api/ApiWordDefinitions";
 import { uuid } from "uuidv4";
 
 interface ListItemsProps {
   head: string;
-  def?: ApiWordDefintions[];
+  definitions?: ApiWordDefinitions[];
 }
 
 export const ListItems = (props: ListItemsProps) => {
@@ -12,10 +12,14 @@ export const ListItems = (props: ListItemsProps) => {
     <div>
       <h2>{props.head}</h2>
       <ul>
-        {props.def &&
-          props.def.map((el: ApiWordDefintions) => {
+        {props.definitions &&
+          props.definitions.map((definition: ApiWordDefinitions) => {
             const uniqueKey: string = uuid();
-            return <li key={uniqueKey}>{el.definition}</li>;
+            return (
+              <>
+                <li key={uniqueKey}>{definition.definition}</li>
+              </>
+            );
           })}
       </ul>
     </div>
