@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+@mixin responsive($size) {
+  $query: map-get($breakpoints, $size);
+  $minWidth: map-get($query, min-width);
+  @media (min-width: #{$minWidth}) {
+    @content;
+  }
+}

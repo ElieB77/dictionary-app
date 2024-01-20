@@ -10,8 +10,8 @@ export const WordPhoneticAudio = (props: WordPhoneticAudioProps) => {
   return (
     <div className="__word_phonetic_audio">
       <div>
-        <h2>{props.word}</h2>
-        <h5>{props.phonetic ? props.phonetic : "No phonetic available."}</h5>
+        <h1>{props.word}</h1>
+        <h2>{props.phonetic ? props.phonetic : "No phonetic available."}</h2>
       </div>
       {props.audioButton}
     </div>

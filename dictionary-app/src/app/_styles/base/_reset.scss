@@ -1,3 +1,5 @@
+@use "../utils/variables" as *;
+
 * {
   margin: 0;
 }
@@ -8,4 +10,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: $inter-regular;
 }

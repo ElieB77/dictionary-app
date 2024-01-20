@@ -7,7 +7,7 @@ interface DividerProps {
 export const Divider = (props: DividerProps) => {
   return (
     <div className="__divider">
-      <p>{props.content}</p>
+      <h3>{props.content}</h3>
       <hr />
     </div>
   );

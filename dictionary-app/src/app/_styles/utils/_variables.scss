@@ -23,12 +23,12 @@ $desktop: 1440px;
 
 $breakpoints: (
   "sm": (
-    max-width: $mobile,
+    min-width: $mobile,
   ),
   "md": (
-    max-width: $tablet,
+    min-width: $tablet,
   ),
   "lg": (
-    max-width: $desktop,
+    min-width: $desktop,
   ),
 );

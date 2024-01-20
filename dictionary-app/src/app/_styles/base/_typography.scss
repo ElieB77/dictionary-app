@@ -1,0 +1,32 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+h1 {
+  font-size: 32px;
+  text-transform: lowercase;
+  @include responsive("md") {
+    font-size: 64px;
+  }
+}
+
+h2 {
+  font-size: 18px;
+  @include responsive("md") {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: 16px;
+
+  @include responsive("md") {
+    font-size: 20px;
+  }
+}
+
+p {
+  font-size: 15px;
+  @include responsive("md") {
+    font-size: 18px;
+  }
+}
