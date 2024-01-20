@@ -7,6 +7,8 @@ import "@/app/_styles/templates/_layout.scss";
 import { WordPhoneticAudio } from "@/app/_components/molecules/WordPhoneticAudio";
 import { useSearch } from "@/app/_contexts/SearchContext";
 import { TextBlock } from "@/app/_components/organisms/TextBlock";
+import { Divider } from "@/app/_components/atoms/Divider";
+import { ApiLink } from "@/app/_components/atoms/ApiLink";
 
 export const Layout = (): JSX.Element => {
   const { result } = useSearch();
@@ -23,6 +25,8 @@ export const Layout = (): JSX.Element => {
         phonetic={result[0]?.phonetic}
       />
       <TextBlock />
+      <Divider noContent={true} />
+      <ApiLink />
     </div>
   );
 };

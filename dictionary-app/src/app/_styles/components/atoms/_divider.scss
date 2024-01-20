@@ -3,9 +3,10 @@
 .__divider {
   display: flex;
   align-items: center;
+  margin: 30px 0;
+  gap: 21px;
   & p {
     flex-grow: 1;
-    margin-right: 10px;
   }
   & hr {
     flex-grow: 2;

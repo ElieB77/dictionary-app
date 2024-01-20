@@ -9,7 +9,7 @@ interface SynonymsProps {
 export const Synonyms = (props: SynonymsProps) => {
   return (
     <div className="__synonyms">
-      <h2>{props.head}</h2>
+      {props.synonyms?.length !== 0 && <h2>{props.head}</h2>}
       {props.synonyms &&
         props.synonyms.map((synonym: string, index: number) => {
           const uniqueKey: string = uuid();

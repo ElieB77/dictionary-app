@@ -1,0 +1,25 @@
+.__list_items {
+  & ul {
+    margin-top: 17px;
+    list-style: none;
+    & li {
+      text-indent: -18px;
+      text-align: left;
+      padding-left: 16px;
+
+      &::before {
+        content: "\2022";
+        color: red;
+        margin-right: 10px;
+      }
+    }
+    & p {
+      margin-top: 13px;
+      padding-left: 16px;
+    }
+  }
+
+  &_item:not(:last-child) {
+    margin-bottom: 13px;
+  }
+}
