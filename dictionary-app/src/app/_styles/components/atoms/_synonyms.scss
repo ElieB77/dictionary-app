@@ -1,10 +1,12 @@
+@use "../../utils/variables" as *;
+
 .__synonyms {
   margin-top: 30px;
-  & h2 {
+  & h3 {
     display: inline-block;
-  }
-
-  & h2 {
     margin-right: 22px;
+  }
+  & span {
+    color: $accent-color;
   }
 }

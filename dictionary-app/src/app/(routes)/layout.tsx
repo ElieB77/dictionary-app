@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body data-theme={"dark"}>
         <SearchProvider>{children}</SearchProvider>
       </body>
     </html>

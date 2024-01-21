@@ -35,3 +35,15 @@ li {
     font-size: 18px;
   }
 }
+
+h1,
+h2,
+p,
+li {
+  color: var(--primary-text);
+}
+
+h3,
+h4 {
+  color: var(--secondary-text);
+}

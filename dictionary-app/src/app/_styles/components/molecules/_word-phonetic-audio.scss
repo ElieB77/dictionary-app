@@ -1,6 +1,12 @@
+@use "../../utils/variables" as *;
+
 .__word_phonetic_audio {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 24px;
+
+  & h2 {
+    color: $accent-color;
+  }
 }

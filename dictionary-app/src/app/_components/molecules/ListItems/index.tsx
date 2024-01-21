@@ -10,7 +10,7 @@ interface ListItemsProps {
 export const ListItems = (props: ListItemsProps) => {
   return (
     <div className="__list_items">
-      <h2>{props.head}</h2>
+      <h3>{props.head}</h3>
       <ul>
         {props.definitions &&
           props.definitions.map((definition: ApiWordDefinitions) => {
