@@ -11,7 +11,7 @@ interface ThemeLogoProps {
 
 export const ThemeLogo = (props: ThemeLogoProps): JSX.Element => {
   return (
-    <div>
+    <div className="__theme_logo">
       <Image
         className={props.dark ? "__theme_logo" : ""}
         src={props.src}

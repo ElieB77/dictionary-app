@@ -8,6 +8,11 @@ export const SearchBar = () => {
   const [word, setWord] = useState<string>("");
   const { handleSearchData } = useSearch();
 
+  const handleSearch = () => {
+    handleSearchData(word);
+    setWord("");
+  };
+
   return (
     <div className="__search_bar">
       <input
@@ -16,7 +21,7 @@ export const SearchBar = () => {
         onChange={(e) => setWord(e.target.value)}
       />
       <Image
-        onClick={() => handleSearchData(word)}
+        onClick={() => handleSearch()}
         src={"/images/icon-search.svg"}
         alt={"Search Icon"}
         width={15.55}

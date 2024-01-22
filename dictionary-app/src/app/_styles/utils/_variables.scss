@@ -10,6 +10,10 @@ $divider-color: #e9e9e9;
 $divider-dark-color: #3a3a3a;
 $searchbar-color: #f4f4f4;
 $searchbar-dark-color: #1f1f1f;
+$theme-light-logo: invert(33%) sepia(92%) saturate(3353%) hue-rotate(258deg)
+  brightness(97%) contrast(92%);
+$theme-dark-logo: invert(48%) sepia(70%) saturate(6853%) hue-rotate(258deg)
+  brightness(97%) contrast(91%);
 
 :root {
   --background: #{$primary-color};
@@ -17,6 +21,7 @@ $searchbar-dark-color: #1f1f1f;
   --secondary-text: #{$input-color};
   --searchbar: #{$searchbar-color};
   --divider: #{$divider-color};
+  --theme-logo: #{$theme-light-logo};
 }
 
 [data-theme="dark"] {
@@ -24,6 +29,7 @@ $searchbar-dark-color: #1f1f1f;
   --primary-text: #{$primary-color};
   --searchbar: #{$searchbar-dark-color};
   --divider: #{$divider-dark-color};
+  --theme-logo: #{$theme-dark-logo};
 }
 
 $inconsolata-regular: "Incosolata Regular";

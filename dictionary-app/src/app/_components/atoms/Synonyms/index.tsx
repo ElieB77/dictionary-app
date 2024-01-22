@@ -18,7 +18,7 @@ export const Synonyms = (props: SynonymsProps) => {
           return (
             <span key={uniqueKey} onClick={() => handleSearchData(synonym)}>
               {synonym}
-              {index < (props.synonyms?.length ?? 0) - 1 && " "}
+              {index < (props.synonyms?.length ?? 0) - 1 && ", "}
             </span>
           );
         })}
