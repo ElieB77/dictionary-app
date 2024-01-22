@@ -40,6 +40,18 @@ $lora-regular: "Lora Regular";
 $lora-bold: "Lora Bold";
 $lora-bold-italic: "Lora Bold Italic";
 
+[data-font="sans-serif"] {
+  --font: #{$inter-regular};
+}
+
+[data-font="serif"] {
+  --font: #{$lora-regular};
+}
+
+[data-font="mono"] {
+  --font: #{$inconsolata-regular};
+}
+
 $mobile: 327px;
 $tablet: 768px;
 $desktop: 1440px;

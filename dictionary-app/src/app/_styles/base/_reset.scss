@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: $inter-regular;
+  font-family: var(--font);
   padding-bottom: 85px;
   background-color: var(--background);
   transition: all 0.3s ease;

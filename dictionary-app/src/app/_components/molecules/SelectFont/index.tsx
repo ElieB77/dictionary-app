@@ -2,6 +2,7 @@ import Image from "next/image";
 import "@/app/_styles/components/molecules/_select-font.scss";
 import { FontModal } from "../FontModal";
 import { useState } from "react";
+import { useFont } from "@/app/_contexts/FontContext";
 
 export const SelectFont = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

@@ -10,13 +10,15 @@ import { TextBlock } from "@/app/_components/organisms/TextBlock";
 import { Divider } from "@/app/_components/atoms/Divider";
 import { ApiLink } from "@/app/_components/atoms/ApiLink";
 import { useTheme } from "@/app/_contexts/ThemeContext";
+import { useFont } from "@/app/_contexts/FontContext";
 
 export const Layout = (): JSX.Element => {
   const { result } = useSearch();
   const { themeString } = useTheme();
+  const { selectedFont } = useFont();
 
   return (
-    <body data-theme={themeString}>
+    <body data-theme={themeString} data-font={selectedFont}>
       <div className="__layout">
         <Header />
         <SearchBar />

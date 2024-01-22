@@ -16,6 +16,7 @@ export const SearchBar = () => {
   return (
     <div className="__search_bar">
       <input
+        placeholder="Search for any word.."
         value={word}
         type="text"
         onChange={(e) => setWord(e.target.value)}
