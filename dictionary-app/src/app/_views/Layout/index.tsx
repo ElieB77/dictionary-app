@@ -9,24 +9,26 @@ import { useSearch } from "@/app/_contexts/SearchContext";
 import { TextBlock } from "@/app/_components/organisms/TextBlock";
 import { Divider } from "@/app/_components/atoms/Divider";
 import { ApiLink } from "@/app/_components/atoms/ApiLink";
+import { useTheme } from "@/app/_contexts/ThemeContext";
 
 export const Layout = (): JSX.Element => {
   const { result } = useSearch();
-
-  console.log(result);
+  const { themeString } = useTheme();
 
   return (
-    <div className="__layout">
-      <Header />
-      <SearchBar />
-      <WordPhoneticAudio
-        audioButton={<AudioButton />}
-        word={result[0]?.word}
-        phonetic={result[0]?.phonetic}
-      />
-      <TextBlock />
-      <Divider noContent={true} />
-      <ApiLink />
-    </div>
+    <body data-theme={themeString}>
+      <div className="__layout">
+        <Header />
+        <SearchBar />
+        <WordPhoneticAudio
+          audioButton={<AudioButton />}
+          word={result[0]?.word}
+          phonetic={result[0]?.phonetic}
+        />
+        <TextBlock />
+        <Divider noContent={true} />
+        <ApiLink />
+      </div>
+    </body>
   );
 };
