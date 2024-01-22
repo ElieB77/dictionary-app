@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export const SearchBar = () => {
-  const [word, setWord] = useState("");
+  const [word, setWord] = useState<string>("");
   const { handleSearchData } = useSearch();
 
   return (

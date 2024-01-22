@@ -8,5 +8,7 @@
   }
   & span {
     color: $accent-color;
+    cursor: pointer;
+    font-weight: bolder;
   }
 }
