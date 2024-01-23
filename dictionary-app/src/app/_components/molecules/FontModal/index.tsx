@@ -1,5 +1,6 @@
 import { useFont } from "@/app/_contexts/FontContext";
 import "@/app/_styles/components/molecules/_font-modal.scss";
+import { useEffect } from "react";
 import { uuid } from "uuidv4";
 
 interface FontModalProps {

@@ -13,6 +13,12 @@ export const SearchBar = () => {
     setWord("");
   };
 
+  const handleKeyPress = (e: any) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="__search_bar">
       <input
@@ -20,9 +26,10 @@ export const SearchBar = () => {
         value={word}
         type="text"
         onChange={(e) => setWord(e.target.value)}
+        onKeyDown={handleKeyPress}
       />
       <Image
-        onClick={() => handleSearch()}
+        onClick={handleSearch}
         src={"/images/icon-search.svg"}
         alt={"Search Icon"}
         width={15.55}
