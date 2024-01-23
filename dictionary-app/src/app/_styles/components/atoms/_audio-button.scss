@@ -10,3 +10,8 @@
     transform: scale(0.9);
   }
 }
+
+.__disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

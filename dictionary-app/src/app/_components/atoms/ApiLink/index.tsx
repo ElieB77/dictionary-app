@@ -1,18 +1,21 @@
 import Link from "next/link";
 import Image from "next/image";
 import "@/app/_styles/components/atoms/_api-link.scss";
+import { useSearch } from "@/app/_contexts/SearchContext";
 
-interface ApiLinkProps {
-  word?: string;
-}
+export const ApiLink = () => {
+  const { result } = useSearch();
 
-export const ApiLink = (props: ApiLinkProps) => {
   return (
-    <Link href={"/"} className="__api_link">
+    <Link
+      href={`https://en.wiktionary.org/wiki/${result[0]?.word}`}
+      className="__api_link"
+      target="blank"
+    >
       <h4>
         Source
         <span>
-          https://en.wiktionary.org/wiki/keyboard
+          {`https://en.wiktionary.org/wiki/${result[0]?.word}`}
           <Image
             src={"/images/tabler_external-link.svg"}
             alt={"External Link"}

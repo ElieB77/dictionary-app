@@ -8,6 +8,11 @@ export const AudioButton = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const { result } = useSearch();
 
+  const audioSource =
+    result[0]?.phonetics[0]?.audio ||
+    result[0]?.phonetics[1]?.audio ||
+    result[0]?.phonetics[2]?.audio;
+
   const handlePlayPause = () => {
     const audioElement = document.getElementById("audioPlayer");
 
@@ -20,19 +25,23 @@ export const AudioButton = () => {
     setIsPlaying(!isPlaying);
   };
 
+  console.log(audioSource);
+
   return (
     <>
       <Image
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={handlePlayPause}
-        className={`__audio_button ${isHovered ? "__hovered" : ""}`}
+        className={`__audio_button ${isHovered ? "__hovered" : ""} ${
+          audioSource === "" ? "__disabled" : ""
+        }`}
         src={`/images/icon-play${isHovered ? "-hover" : ""}.svg`}
         alt={"Play Button"}
         width={48}
         height={48}
       />
-      <audio id="audioPlayer" src={result[0]?.phonetics[0]?.audio} />
+      <audio id="audioPlayer" src={audioSource} />
     </>
   );
 };
