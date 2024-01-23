@@ -4,8 +4,9 @@ import { useSearch } from "@/app/_contexts/SearchContext";
 import { useState } from "react";
 
 export const AudioButton = () => {
-  const { result } = useSearch();
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const { result } = useSearch();
 
   const handlePlayPause = () => {
     const audioElement = document.getElementById("audioPlayer");
@@ -22,9 +23,11 @@ export const AudioButton = () => {
   return (
     <>
       <Image
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         onClick={handlePlayPause}
-        className="__audio_button"
-        src={"/images/icon-play.svg"}
+        className={`__audio_button ${isHovered ? "__hovered" : ""}`}
+        src={`/images/icon-play${isHovered ? "-hover" : ""}.svg`}
         alt={"Play Button"}
         width={48}
         height={48}

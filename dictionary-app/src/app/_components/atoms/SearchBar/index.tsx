@@ -12,8 +12,8 @@ export const SearchBar = () => {
   const handleSearch = () => {
     if (word !== "") {
       handleSearchData(word);
-      setWord("");
       setError(false);
+      setWord("");
     } else {
       setError(true);
     }
