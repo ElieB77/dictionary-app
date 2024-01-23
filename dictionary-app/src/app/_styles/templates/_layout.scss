@@ -1,6 +1,12 @@
 @use "../utils/variables" as *;
+@use "../utils/mixins" as *;
 
 .__layout {
   width: $mobile;
   margin-inline: auto;
+
+  @include responsive("md") {
+    width: $tablet;
+    padding: 0 40px;
+  }
 }

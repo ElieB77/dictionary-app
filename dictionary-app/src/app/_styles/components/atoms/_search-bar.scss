@@ -8,6 +8,11 @@
   border-radius: 16px;
   height: 48px;
   padding-inline: 24px;
+  border: solid 1px transparent;
+
+  &:has(> input:focus) {
+    border: solid 1px $accent-color;
+  }
 
   & input {
     border: none;
@@ -15,8 +20,12 @@
     outline: none;
     background-color: var(--searchbar);
     height: 48px;
-    border-radius: 16px;
     color: var(--primary-text);
+
+    &:focus {
+      border-top: solid 1px $accent-color;
+      border-bottom: solid 1px $accent-color;
+    }
   }
 
   & img {
@@ -26,4 +35,17 @@
       transform: scale(1.1);
     }
   }
+}
+
+.__text_error {
+  color: $error-color;
+}
+
+.__error {
+  border: solid 1px $error-color !important;
+}
+
+.__input_error {
+  border-top: solid 1px $error-color !important;
+  border-bottom: solid 1px $error-color !important;
 }

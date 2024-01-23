@@ -1,6 +1,7 @@
 @use "../../utils/variables" as *;
 
 .__theme_switch {
+  padding-top: 4px;
   &_toggle {
     position: relative;
     width: 40px;

@@ -8,7 +8,7 @@ export const api = {
       return response.data;
     } catch (error) {
       console.error("Error fetching words:", error);
-      throw new Error("Failed to fetch words");
+      return { data: null, error: "No results found.." };
     }
   },
 };

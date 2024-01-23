@@ -17,6 +17,8 @@ export const Layout = (): JSX.Element => {
   const { themeString } = useTheme();
   const { selectedFont } = useFont();
 
+  console.log(result);
+
   return (
     <body data-theme={themeString} data-font={selectedFont}>
       <div className="__layout">
