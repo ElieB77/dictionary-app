@@ -1,11 +1,17 @@
 @use "../../utils/variables" as *;
 
 .__not_found_error {
+  text-align: center;
   padding: 20px;
   margin-top: 50px;
   border-radius: 16px;
-  box-shadow: var(--box-shadow);
-  & h1 {
-    text-transform: capitalize;
+  & span {
+    font-size: 65px;
+  }
+  & h3 {
+    margin-top: 30px;
+  }
+  & p {
+    margin-top: 24px;
   }
 }
