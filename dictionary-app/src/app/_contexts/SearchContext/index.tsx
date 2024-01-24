@@ -9,6 +9,7 @@ interface SearchProviderProps {
 interface SearchContext {
   handleSearchData: any;
   result: any;
+  searchInput: string;
 }
 
 const SearchContext = createContext({} as SearchContext);
@@ -19,10 +20,12 @@ export const useSearch = () => {
 
 export const SearchProvider = ({ children }: SearchProviderProps) => {
   const [result, setResult] = useState<any>("");
+  const [searchInput, setSearchInput] = useState<string>("");
 
   const handleSearchData = async (word: string) => {
     const data = await api.fetchWords(word);
     setResult(data);
+    setSearchInput(word);
   };
 
   return (
@@ -30,6 +33,7 @@ export const SearchProvider = ({ children }: SearchProviderProps) => {
       value={{
         handleSearchData,
         result,
+        searchInput,
       }}
     >
       {children}

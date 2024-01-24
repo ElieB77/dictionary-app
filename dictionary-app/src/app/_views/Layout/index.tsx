@@ -11,9 +11,10 @@ import { Divider } from "@/app/_components/atoms/Divider";
 import { ApiLink } from "@/app/_components/atoms/ApiLink";
 import { useTheme } from "@/app/_contexts/ThemeContext";
 import { useFont } from "@/app/_contexts/FontContext";
+import { NotFoundError } from "@/app/_components/molecules/NotFoundError";
 
 export const Layout = (): JSX.Element => {
-  const { result } = useSearch();
+  const { result, searchInput } = useSearch();
   const { themeString } = useTheme();
   const { selectedFont } = useFont();
 
@@ -24,14 +25,20 @@ export const Layout = (): JSX.Element => {
       <div className="__layout">
         <Header />
         <SearchBar />
-        <WordPhoneticAudio
-          audioButton={<AudioButton />}
-          word={result[0]?.word}
-          phonetic={result[0]?.phonetic}
-        />
-        <TextBlock />
-        <Divider noContent={true} />
-        <ApiLink />
+        {result.data !== null ? (
+          <>
+            <WordPhoneticAudio
+              audioButton={<AudioButton />}
+              word={result[0]?.word}
+              phonetic={result[0]?.phonetic}
+            />
+            <TextBlock />
+            <Divider noContent={true} />
+            <ApiLink />
+          </>
+        ) : (
+          <NotFoundError word={searchInput} />
+        )}
       </div>
     </body>
   );
