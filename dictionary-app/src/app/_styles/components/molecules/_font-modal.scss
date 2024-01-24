@@ -3,11 +3,15 @@
 .__font_modal {
   width: 183px;
   position: absolute;
-  top: 60px;
+  top: 65px;
   background-color: var(--background);
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   border-radius: 16px;
   padding: 24px 0 24px 24px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-15px);
+  transition: all 0.2s linear;
 
   & li {
     list-style-type: none;
@@ -32,4 +36,10 @@
       margin-bottom: 16px;
     }
   }
+}
+
+.__is_open {
+  opacity: 1;
+  pointer-events: initial;
+  transform: translateY(0);
 }

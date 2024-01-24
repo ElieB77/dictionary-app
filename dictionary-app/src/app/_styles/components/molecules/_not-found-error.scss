@@ -4,7 +4,7 @@
   padding: 20px;
   margin-top: 50px;
   border-radius: 16px;
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   & h1 {
     text-transform: capitalize;
   }

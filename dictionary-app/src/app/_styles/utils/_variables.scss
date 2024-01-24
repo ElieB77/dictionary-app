@@ -14,6 +14,8 @@ $theme-light-logo: invert(33%) sepia(92%) saturate(3353%) hue-rotate(258deg)
   brightness(97%) contrast(92%);
 $theme-dark-logo: invert(48%) sepia(70%) saturate(6853%) hue-rotate(258deg)
   brightness(97%) contrast(91%);
+$light-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+$dark-box-shadow: 0px 5px 30px 0px #a445ed;
 
 :root {
   --background: #{$primary-color};
@@ -22,6 +24,7 @@ $theme-dark-logo: invert(48%) sepia(70%) saturate(6853%) hue-rotate(258deg)
   --searchbar: #{$searchbar-color};
   --divider: #{$divider-color};
   --theme-logo: #{$theme-light-logo};
+  --box-shadow: #{$light-box-shadow};
 }
 
 [data-theme="dark"] {
@@ -30,6 +33,7 @@ $theme-dark-logo: invert(48%) sepia(70%) saturate(6853%) hue-rotate(258deg)
   --searchbar: #{$searchbar-dark-color};
   --divider: #{$divider-dark-color};
   --theme-logo: #{$theme-dark-logo};
+  --box-shadow: #{$dark-box-shadow};
 }
 
 $inconsolata-regular: "Incosolata Regular";
