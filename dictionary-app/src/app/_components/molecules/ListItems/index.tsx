@@ -12,16 +12,15 @@ export const ListItems = (props: ListItemsProps) => {
     <div className="__list_items">
       <h3>{props.head}</h3>
       <ul>
-        {props.definitions &&
-          props.definitions.map((definition: ApiWordDefinitions) => {
-            const uniqueKey: string = uuid();
-            return (
-              <div key={uniqueKey} className="__list_items_item">
-                <li>{definition.definition}</li>
-                {definition.example && <p>{`"${definition.example}"`}</p>}
-              </div>
-            );
-          })}
+        {props.definitions?.map((definition: ApiWordDefinitions) => {
+          const uniqueKey: any = uuid();
+          return (
+            <div key={uniqueKey} className="__list_items_item">
+              <li>{definition.definition}</li>
+              {definition.example && <p>{`"${definition.example}"`}</p>}
+            </div>
+          );
+        })}
       </ul>
     </div>
   );

@@ -5,17 +5,14 @@ import { useSearch } from "@/app/_contexts/SearchContext";
 
 export const ApiLink = () => {
   const { result } = useSearch();
+  const link: string = `https://en.wiktionary.org/wiki/${result[0]?.word}`;
 
   return (
-    <Link
-      href={`https://en.wiktionary.org/wiki/${result[0]?.word}`}
-      className="__api_link"
-      target="blank"
-    >
+    <Link href={link} className="__api_link" target="blank">
       <h4>
         Source
         <span>
-          {`https://en.wiktionary.org/wiki/${result[0]?.word}`}
+          {link}
           <Image
             src={"/images/tabler_external-link.svg"}
             alt={"External Link"}
