@@ -6,14 +6,19 @@ interface FontModalProps {
 }
 
 export const FontModal = (props: FontModalProps) => {
-  const { listOfFonts, setSelectedFont } = useFont();
+  const { listOfFonts, setSelectedFont, selectedFont } = useFont();
 
   return (
     <div className={`__font_modal ${props.isOpen ? "__is_open" : ""}`}>
       <ul>
         {listOfFonts.map((font: string) => {
+          console.log(font === selectedFont);
           return (
-            <li key={font} onClick={() => setSelectedFont(font)}>
+            <li
+              key={font}
+              onClick={() => setSelectedFont(font)}
+              className={font === selectedFont ? "__font_selected" : ""}
+            >
               {font}
             </li>
           );

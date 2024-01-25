@@ -13,6 +13,7 @@
   pointer-events: none;
   transform: translateY(-15px);
   transition: all 0.2s linear;
+  z-index: 1;
 }
 
 @mixin font-list-styles {
@@ -47,6 +48,11 @@
   transform: translateY(0);
 }
 
+@mixin selected-font {
+  pointer-events: none;
+  color: $accent-color;
+}
+
 .__font_modal {
   @include modal-styles;
   @include font-list-styles;
@@ -54,4 +60,8 @@
 
 .__is_open {
   @include modal-open-styles;
+}
+
+.__font_selected {
+  @include selected-font;
 }
