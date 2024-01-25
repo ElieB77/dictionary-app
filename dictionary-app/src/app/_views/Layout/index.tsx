@@ -12,6 +12,7 @@ import { ApiLink } from "@/app/_components/atoms/ApiLink";
 import { useTheme } from "@/app/_contexts/ThemeContext";
 import { useFont } from "@/app/_contexts/FontContext";
 import { NotFoundError } from "@/app/_components/molecules/NotFoundError";
+import { Loader } from "@/app/_components/atoms/Loader";
 
 export const Layout = (): JSX.Element => {
   const { result, searchInput } = useSearch();
@@ -33,6 +34,7 @@ export const Layout = (): JSX.Element => {
             <TextBlock />
             <Divider noContent={true} />
             <ApiLink />
+            <Loader />
           </>
         ) : (
           <NotFoundError word={searchInput} />
