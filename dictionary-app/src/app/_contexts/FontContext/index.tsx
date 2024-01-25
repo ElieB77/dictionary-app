@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, ReactNode, useContext, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useContext,
+  useState,
+} from "react";
 
 interface FontProviderProps {
   children: ReactNode;
@@ -8,7 +15,7 @@ interface FontProviderProps {
 
 interface FontContext {
   listOfFonts: string[];
-  setSelectedFont: any;
+  setSelectedFont: Dispatch<SetStateAction<string>>;
   selectedFont: string;
 }
 
@@ -18,7 +25,7 @@ export const useFont = () => {
   return useContext(FontContext);
 };
 
-export const FontProvider = ({ children }: FontProviderProps) => {
+export const FontProvider = ({ children }: FontProviderProps): JSX.Element => {
   const listOfFonts = ["sans-serif", "serif", "mono"];
   const [selectedFont, setSelectedFont] = useState<string>("sans-serif");
 

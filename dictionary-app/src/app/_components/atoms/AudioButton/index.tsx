@@ -1,31 +1,20 @@
 import Image from "next/image";
 import "@/app/_styles/components/atoms/_audio-button.scss";
 import { useSearch } from "@/app/_contexts/SearchContext";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { getAudioSource, playPauseAudio } from "@/app/_utils/audio";
 
-export const AudioButton = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+export const AudioButton = (): JSX.Element => {
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const { result } = useSearch();
 
-  const audioSource =
-    result[0]?.phonetics[0]?.audio ||
-    result[0]?.phonetics[1]?.audio ||
-    result[0]?.phonetics[2]?.audio;
+  const audioSource = getAudioSource(result[0]?.phonetics);
 
   const handlePlayPause = () => {
-    const audioElement = document.getElementById("audioPlayer");
-
-    if (isPlaying) {
-      audioElement?.pause();
-    } else {
-      audioElement?.play();
-    }
-
-    setIsPlaying(!isPlaying);
+    playPauseAudio(isPlaying, setIsPlaying, audioRef.current);
   };
-
-  console.log(audioSource);
 
   return (
     <>
@@ -34,14 +23,14 @@ export const AudioButton = () => {
         onMouseLeave={() => setIsHovered(false)}
         onClick={handlePlayPause}
         className={`__audio_button ${isHovered ? "__hovered" : ""} ${
-          audioSource === "" ? "__disabled" : ""
+          audioSource ?? "__disabled"
         }`}
         src={`/images/icon-play${isHovered ? "-hover" : ""}.svg`}
         alt={"Play Button"}
         width={48}
         height={48}
       />
-      <audio id="audioPlayer" src={audioSource} />
+      <audio id="audioPlayer" src={audioSource} ref={audioRef} />
     </>
   );
 };

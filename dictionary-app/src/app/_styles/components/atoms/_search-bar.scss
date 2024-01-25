@@ -1,6 +1,6 @@
 @use "../../utils/variables" as *;
 
-.__search_bar {
+@mixin searchbar-styles {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,11 +9,12 @@
   height: 48px;
   padding-inline: 24px;
   border: solid 1px transparent;
-
   &:has(> input:focus) {
     border: solid 1px $accent-color;
   }
+}
 
+@mixin input-styles {
   & input {
     border: none;
     width: 100%;
@@ -27,7 +28,9 @@
       border-bottom: solid 1px $accent-color;
     }
   }
+}
 
+@mixin search-icon-styles {
   & img {
     cursor: pointer;
     transition: all 0.3s ease-in 0s;
@@ -35,6 +38,12 @@
       transform: scale(1.1);
     }
   }
+}
+
+.__search_bar {
+  @include searchbar-styles;
+  @include input-styles;
+  @include search-icon-styles;
 }
 
 .__text_error {

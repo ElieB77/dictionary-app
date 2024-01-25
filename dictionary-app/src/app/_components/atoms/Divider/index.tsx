@@ -5,7 +5,7 @@ interface DividerProps {
   noContent?: boolean;
 }
 
-export const Divider = (props: DividerProps) => {
+export const Divider = (props: DividerProps): JSX.Element => {
   return (
     <div className="__divider">
       {!props.noContent && <h2>{props.content}</h2>}

@@ -1,1 +1,33 @@
 @use "base";
+@use "./utils/variables" as *;
+
+:root {
+  --background: #{$primary-color};
+  --primary-text: #{$primary-text-color};
+  --secondary-text: #{$input-color};
+  --searchbar: #{$searchbar-color};
+  --divider: #{$divider-color};
+  --theme-logo: #{$theme-light-logo};
+  --box-shadow: #{$light-box-shadow};
+}
+
+[data-theme="dark"] {
+  --background: #{$secondary-color};
+  --primary-text: #{$primary-color};
+  --searchbar: #{$searchbar-dark-color};
+  --divider: #{$divider-dark-color};
+  --theme-logo: #{$theme-dark-logo};
+  --box-shadow: #{$dark-box-shadow};
+}
+
+[data-font="sans-serif"] {
+  --font: #{$inter-regular};
+}
+
+[data-font="serif"] {
+  --font: #{$lora-regular};
+}
+
+[data-font="mono"] {
+  --font: #{$inconsolata-regular};
+}

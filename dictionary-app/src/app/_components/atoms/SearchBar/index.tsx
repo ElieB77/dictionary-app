@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useSearch } from "@/app/_contexts/SearchContext";
 import "@/app/_styles/components/atoms/_search-bar.scss";
@@ -19,7 +20,7 @@ export const SearchBar = () => {
     }
   };
 
-  const handleKeyPress = (e: any) => {
+  const handleKeyPress = (e: { key: string }) => {
     if (e.key === "Enter") {
       handleSearch();
     }

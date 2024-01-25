@@ -10,18 +10,17 @@ export const TextBlock = () => {
 
   return (
     <>
-      {result[0] &&
-        result[0].meanings.map((meaning: ApiGlobal) => {
-          const uniqueKey: string = uuid();
+      {result[0]?.meanings.map((meaning: ApiGlobal) => {
+        const uniqueKey: string = uuid();
 
-          return (
-            <div className="__text_block" key={uniqueKey}>
-              <Divider content={meaning.partOfSpeech} />
-              <ListItems head={"Meaning"} definitions={meaning.definitions} />
-              <Synonyms head="Synonyms" synonyms={meaning.synonyms} />
-            </div>
-          );
-        })}
+        return (
+          <div className="__text_block" key={uniqueKey}>
+            <Divider content={meaning.partOfSpeech} />
+            <ListItems head={"Meaning"} definitions={meaning.definitions} />
+            <Synonyms head="Synonyms" synonyms={meaning.synonyms} />
+          </div>
+        );
+      })}
     </>
   );
 };

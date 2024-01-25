@@ -1,6 +1,6 @@
 @use "../../utils/variables" as *;
 
-.__list_items {
+@mixin list {
   & ul {
     margin-top: 17px;
     list-style: none;
@@ -21,8 +21,15 @@
       color: $input-color;
     }
   }
+}
 
+@mixin items {
   &_item:not(:last-child) {
     margin-bottom: 13px;
   }
+}
+
+.__list_items {
+  @include list;
+  @include items;
 }

@@ -13,7 +13,7 @@ export const ListItems = (props: ListItemsProps) => {
       <h3>{props.head}</h3>
       <ul>
         {props.definitions?.map((definition: ApiWordDefinitions) => {
-          const uniqueKey: any = uuid();
+          const uniqueKey: string = uuid();
           return (
             <div key={uniqueKey} className="__list_items_item">
               <li>{definition.definition}</li>

@@ -24,7 +24,9 @@ export const useTheme = () => {
   return useContext(ThemeContext);
 };
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => {
+export const ThemeProvider = ({
+  children,
+}: ThemeProviderProps): JSX.Element => {
   const [theme, setTheme] = useState<boolean>(false);
   const [themeString, setThemeString] = useState<string>("light");
 

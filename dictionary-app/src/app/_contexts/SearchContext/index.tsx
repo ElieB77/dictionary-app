@@ -18,7 +18,9 @@ export const useSearch = () => {
   return useContext(SearchContext);
 };
 
-export const SearchProvider = ({ children }: SearchProviderProps) => {
+export const SearchProvider = ({
+  children,
+}: SearchProviderProps): JSX.Element => {
   const [result, setResult] = useState<any>("");
   const [searchInput, setSearchInput] = useState<string>("");
 

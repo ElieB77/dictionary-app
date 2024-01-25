@@ -1,6 +1,6 @@
 @use "../../utils/variables" as *;
 
-.__font_modal {
+@mixin modal-styles {
   width: 183px;
   position: absolute;
   top: 40px;
@@ -13,7 +13,9 @@
   pointer-events: none;
   transform: translateY(-15px);
   transition: all 0.2s linear;
+}
 
+@mixin font-list-styles {
   & li {
     list-style-type: none;
     cursor: pointer;
@@ -39,8 +41,17 @@
   }
 }
 
-.__is_open {
+@mixin modal-open-styles {
   opacity: 1;
   pointer-events: initial;
   transform: translateY(0);
+}
+
+.__font_modal {
+  @include modal-styles;
+  @include font-list-styles;
+}
+
+.__is_open {
+  @include modal-open-styles;
 }

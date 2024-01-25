@@ -1,5 +1,6 @@
 @use "./fonts" as *;
 
+// Colors
 $primary-color: #fff;
 $secondary-color: #050505;
 $primary-text-color: #2d2d2d;
@@ -10,31 +11,17 @@ $divider-color: #e9e9e9;
 $divider-dark-color: #3a3a3a;
 $searchbar-color: #f4f4f4;
 $searchbar-dark-color: #1f1f1f;
+
+//Filter
 $theme-light-logo: unset;
 $theme-dark-logo: invert(48%) sepia(70%) saturate(6853%) hue-rotate(258deg)
   brightness(97%) contrast(91%) !important;
+
+// Box shadow
 $light-box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
-$dark-box-shadow: 0px 5px 30px 0px #a445ed;
+$dark-box-shadow: 0px 0px 5px 5px #a445ed;
 
-:root {
-  --background: #{$primary-color};
-  --primary-text: #{$primary-text-color};
-  --secondary-text: #{$input-color};
-  --searchbar: #{$searchbar-color};
-  --divider: #{$divider-color};
-  --theme-logo: #{$theme-light-logo};
-  --box-shadow: #{$light-box-shadow};
-}
-
-[data-theme="dark"] {
-  --background: #{$secondary-color};
-  --primary-text: #{$primary-color};
-  --searchbar: #{$searchbar-dark-color};
-  --divider: #{$divider-dark-color};
-  --theme-logo: #{$theme-dark-logo};
-  --box-shadow: #{$dark-box-shadow};
-}
-
+// Fonts
 $inconsolata-regular: "Incosolata Regular";
 $inconsolata-bold: "Incosolata Bold";
 $inter-regular: "Inter Regular";
@@ -42,18 +29,6 @@ $inter-bold: "Inter Bold";
 $lora-regular: "Lora Regular";
 $lora-bold: "Lora Bold";
 $lora-bold-italic: "Lora Bold Italic";
-
-[data-font="sans-serif"] {
-  --font: #{$inter-regular};
-}
-
-[data-font="serif"] {
-  --font: #{$lora-regular};
-}
-
-[data-font="mono"] {
-  --font: #{$inconsolata-regular};
-}
 
 $mobile: 327px;
 $tablet: 768px;
