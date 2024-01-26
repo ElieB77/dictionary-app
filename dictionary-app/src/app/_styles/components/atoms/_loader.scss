@@ -5,6 +5,10 @@
   width: 2em;
   overflow: visible;
   margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 50px;
 }
 
 .__loader:not(:required):after {

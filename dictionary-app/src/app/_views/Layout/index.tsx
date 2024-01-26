@@ -1,5 +1,4 @@
 "use client";
-
 import { AudioButton } from "@/app/_components/atoms/AudioButton";
 import { SearchBar } from "@/app/_components/atoms/SearchBar";
 import { Header } from "../../_components/organisms/Header";
@@ -15,7 +14,7 @@ import { NotFoundError } from "@/app/_components/molecules/NotFoundError";
 import { Loader } from "@/app/_components/atoms/Loader";
 
 export const Layout = (): JSX.Element => {
-  const { result, searchInput } = useSearch();
+  const { result, searchInput, isLoading } = useSearch();
   const { themeString } = useTheme();
   const { selectedFont } = useFont();
 
@@ -24,7 +23,8 @@ export const Layout = (): JSX.Element => {
       <div className="__layout">
         <Header />
         <SearchBar />
-        {result.data !== null ? (
+        {isLoading && <Loader />}
+        {result.data !== null && !isLoading ? (
           <>
             <WordPhoneticAudio
               audioButton={<AudioButton />}
@@ -34,8 +34,9 @@ export const Layout = (): JSX.Element => {
             <TextBlock />
             <Divider noContent={true} />
             <ApiLink />
-            <Loader />
           </>
+        ) : isLoading ? (
+          <Loader />
         ) : (
           <NotFoundError word={searchInput} />
         )}

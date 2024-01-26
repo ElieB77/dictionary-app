@@ -10,6 +10,7 @@ interface SearchContext {
   handleSearchData: any;
   result: any;
   searchInput: string;
+  isLoading: boolean;
 }
 
 const SearchContext = createContext({} as SearchContext);
@@ -22,12 +23,15 @@ export const SearchProvider = ({
   children,
 }: SearchProviderProps): JSX.Element => {
   const [result, setResult] = useState<any>("");
-  const [searchInput, setSearchInput] = useState<string>("");
+  const [searchInput, setSearchInput] = useState<string>("keyboard");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSearchData = async (word: string) => {
+    setIsLoading(true);
     const data = await api.fetchWords(word);
     setResult(data);
     setSearchInput(word);
+    setIsLoading(false);
   };
 
   return (
@@ -36,6 +40,7 @@ export const SearchProvider = ({
         handleSearchData,
         result,
         searchInput,
+        isLoading,
       }}
     >
       {children}
