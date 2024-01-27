@@ -12,7 +12,6 @@ export const FontModal = (props: FontModalProps) => {
     <div className={`__font_modal ${props.isOpen ? "__is_open" : ""}`}>
       <ul>
         {listOfFonts.map((font: string) => {
-          console.log(font === selectedFont);
           return (
             <li
               key={font}

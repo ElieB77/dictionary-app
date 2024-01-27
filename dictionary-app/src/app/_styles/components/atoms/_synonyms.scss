@@ -6,9 +6,13 @@
     display: inline-block;
     margin-right: 22px;
   }
-  & span {
+  & button {
     color: $accent-color;
     cursor: pointer;
     font-weight: bolder;
+    font-size: inherit;
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
   }
 }

@@ -8,7 +8,6 @@ export const Header = (): JSX.Element => {
   return (
     <div className="__header">
       <HeaderLogo
-        to={"/"}
         src={"/images/logo.svg"}
         alt={"Header Logo"}
         width={32}

@@ -13,11 +13,11 @@ export const AudioButton = (): JSX.Element => {
   const audioSource = getAudioSource(result[0]?.phonetics);
 
   const handlePlayPause = () => {
-    playPauseAudio(isPlaying, setIsPlaying, audioRef.current);
+    playPauseAudio(isPlaying, setIsPlaying, audioRef);
   };
 
   return (
-    <>
+    <button>
       <Image
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -31,6 +31,6 @@ export const AudioButton = (): JSX.Element => {
         height={48}
       />
       <audio id="audioPlayer" src={audioSource} ref={audioRef} />
-    </>
+    </button>
   );
 };

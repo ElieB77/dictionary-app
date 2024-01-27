@@ -5,7 +5,9 @@ import { useSearch } from "@/app/_contexts/SearchContext";
 
 export const ApiLink = (): JSX.Element => {
   const { result } = useSearch();
-  const link: string = `https://en.wiktionary.org/wiki/${result[0]?.word}`;
+  const link: string = `https://en.wiktionary.org/wiki/${
+    result && result[0]?.word
+  }`;
 
   return (
     <Link href={link} className="__api_link" target="blank">

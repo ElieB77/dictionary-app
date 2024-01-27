@@ -1,4 +1,11 @@
+@use "../../utils/variables" as *;
+
 .__select_font {
+  text-transform: capitalize;
+  &:hover p {
+    color: $accent-color;
+    transition: 0.3s ease;
+  }
   &_btn {
     display: flex;
     align-items: center;

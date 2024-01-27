@@ -18,13 +18,19 @@ export const Layout = (): JSX.Element => {
   const { themeString } = useTheme();
   const { selectedFont } = useFont();
 
+  const isInitialRender =
+    !isLoading && result?.length === 0 && searchInput === "";
+
   return (
     <body data-theme={themeString} data-font={selectedFont}>
       <div className="__layout">
         <Header />
         <SearchBar />
         {isLoading && <Loader />}
-        {result.data !== null && !isLoading ? (
+        {result &&
+        result.length > 0 &&
+        result[0]?.data !== null &&
+        !isLoading ? (
           <>
             <WordPhoneticAudio
               audioButton={<AudioButton />}
@@ -37,7 +43,7 @@ export const Layout = (): JSX.Element => {
           </>
         ) : isLoading ? (
           <Loader />
-        ) : (
+        ) : isInitialRender ? null : (
           <NotFoundError word={searchInput} />
         )}
       </div>

@@ -7,7 +7,6 @@ export const api = {
       const response = await axios.get(URL);
       return response.data;
     } catch (error) {
-      console.error("Error fetching words:", error);
       return { data: null, error: "No results found.." };
     }
   },

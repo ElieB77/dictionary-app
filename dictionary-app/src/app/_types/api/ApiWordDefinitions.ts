@@ -1,6 +1,6 @@
-export interface ApiWordDefinitions {
+export interface ApiWordDefinition {
   definition: string;
   synonyms: string[];
+  example?: string;
   antonyms: string[];
-  example: string;
 }

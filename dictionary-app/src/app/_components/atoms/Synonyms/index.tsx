@@ -15,10 +15,10 @@ export const Synonyms = (props: SynonymsProps) => {
       {props.synonyms?.map((synonym: string, index: number) => {
         const uniqueKey: string = uuid();
         return (
-          <span key={uniqueKey} onClick={() => handleSearchData(synonym)}>
+          <button key={uniqueKey} onClick={() => handleSearchData(synonym)}>
             {synonym}
             {index < (props.synonyms?.length ?? 0) - 1 && ", "}
-          </span>
+          </button>
         );
       })}
     </div>
