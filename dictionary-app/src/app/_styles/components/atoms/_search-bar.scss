@@ -24,6 +24,7 @@
     color: var(--primary-text);
 
     &:focus {
+      border-radius: 0;
       border-top: solid 1px $accent-color;
       border-bottom: solid 1px $accent-color;
     }
